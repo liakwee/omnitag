@@ -1,4 +1,4 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 
 	grunt.initConfig({
 
@@ -47,21 +47,13 @@ module.exports = function(grunt) {
 			}
 		},
 
-		// CoffeeScript compilation
-		coffee: {
-			compile: {
-				files: {
-					"dist/jquery.boilerplate.js": "src/jquery.boilerplate.coffee"
-				}
-			}
-		},
-		
-		// watch for changes to source 
-		// Better than calling grunt a million times 
+
+		// watch for changes to source
+		// Better than calling grunt a million times
 		// (call 'grunt watch')
 		watch: {
-		    files: ['src/*'],
-		    tasks: ['default']
+			files: ['src/*'],
+			tasks: ['default']
 		}
 
 	});
