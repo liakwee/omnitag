@@ -1,3 +1,11 @@
+/*
+ *  jQuery omnitag - v0.0.2
+ *  A Site Catalyst custom link helper
+ *  https://github.com/liakwee/omnitag
+ *
+ *  Made by Lee Liak Wee
+ *  Under MIT License
+ */
 
 ; // jshint ignore:line
 (function ($, window, document, undefined) {
