@@ -61,4 +61,4 @@
 
 ## License
 
-[MIT License](http://zenorocha.mit-license.org/) © Liak Wee
+[MIT License](https://raw.githubusercontent.com/liakwee/omnitag/master/LICENSE) © Liak Wee
