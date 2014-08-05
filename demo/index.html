@@ -10,16 +10,42 @@
   <a class="omnitagging" href="http://www.google.com" target="_blank" data-tagging='{"events":["event34","event35"],"eVar":["eVar34","eVar56"],"prop":["prop34","prop56"],"value":["this is home","this is anothe value"],"linkname":"this is linkname"}'>test tagging 1</a>
   <a class="omnitagging" href="http://www.google.com" data-tagging='{"eVar":["eVar34","eVar56"],"prop":["prop34","prop56"],"value":["this is home","this is anothe value"],"linkname":"this is linkname"}'>test tagging 1</a>
   <a class="omnitagging" href="http://www.google.com" data-tagging='{"eVar":["eVar34","eVar56"],"prop":["prop34","prop56"],"value":["this is home","this is anothe value"],"linkname":"this is linkname"}'>test tagging 1</a>
+  <a id="manual" class="" href="http://www.google.com" >test tagging 1</a>
 
 </div>
 <script>
   $(function () {
     $(".omnitagging").omnitag({
-      delay: 300,
+      delay: 800,
       trackExternalLinks: false
+    });
+
+    $("#manual").omnitag({
+      delay: 800,
+      trackExternalLinks: false,
+      taggingData: {
+        events: [
+          "event34",
+          "event35"
+        ],
+        eVar: [
+          "eVar34",
+          "eVar56"
+        ],
+        prop: [
+          "prop34",
+          "prop56"
+        ],
+        value: [
+          "this is home",
+          "this is another value"
+        ],
+        linkname: "this is linkname"
+      }
     });
   });
 </script>
+
 
 
 </body>

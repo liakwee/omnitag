@@ -63,7 +63,7 @@
         data = this.settings.taggingData;
       }
 
-      console.log(data);
+      //console.log(data);
       if(data){
 
         events = data.events;

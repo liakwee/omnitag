@@ -8,7 +8,8 @@
       delay: 300,
       account: 'Site Catalyst Account',
       trackDownloadLinks: true,
-      trackExternalLinks: false
+      trackExternalLinks: false,
+      taggingData: undefined
     };
 
 
@@ -48,47 +49,51 @@
         name;
 
       data = $(this.element).data('tagging');
+
+
+      if(!data){
+        data = this.settings.taggingData;
+      }
+
       //console.log(data);
-      events = data.events;
-      eVar = data.eVar;
-      prop = data.prop;
-      value = data.value;
+      if(data){
 
-      try{
-        if(events){
-          s.linkTrackVars = 'events,';
-          s.linkTrackEvents = events.join();
-          s.events = events.join();
-        }
+        events = data.events;
+        eVar = data.eVar;
+        prop = data.prop;
+        value = data.value;
 
-        if(eVar){
-          for(var i= 0; i<eVar.length; i++){
-            name = eVar[i];
-            s.linkTrackVars += (name+',');
-            s[name] = value[i];
+        try{
+          if(events){
+            s.linkTrackVars = 'events,';
+            s.linkTrackEvents = events.join();
+            s.events = events.join();
           }
-        }
 
-        if(prop){
-          for(var j= 0; j<prop.length; j++){
-            name = prop[j];
-            s.linkTrackVars += (name+',');
-            s[name] = value[j];
+          if(eVar){
+            for(var i= 0; i<eVar.length; i++){
+              name = eVar[i];
+              s.linkTrackVars += (name+',');
+              s[name] = value[i];
+            }
           }
-          s.linkTrackVars = s.linkTrackVars.substr(0, s.linkTrackVars.length-1);
+
+          if(prop){
+            for(var j= 0; j<prop.length; j++){
+              name = prop[j];
+              s.linkTrackVars += (name+',');
+              s[name] = value[j];
+            }
+            s.linkTrackVars = s.linkTrackVars.substr(0, s.linkTrackVars.length-1);
+          }
+
+          s.tl(this, 'o', data.linkname);
+          s.linkTrackVars = '';
         }
-
-
-
-        s.tl(this, 'o', data.linkname);
-        //console.log(s.linkTrackVars);
-        //console.log(s.linkTrackEvents);
-        s.linkTrackVars = '';
+        catch(err){
+          console.log(err);
+        }
       }
-      catch(err){
-        console.log(err);
-      }
-
     },
 
     openURI: function(link){
