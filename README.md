@@ -29,6 +29,34 @@
     });
 	```
 
+4. Pass in tagging data manually:
+
+	```  
+    javascript:  
+	$("#manual").omnitag({
+    delay: 800,
+    trackExternalLinks: false,
+    taggingData: {
+      events: [
+        "event34",
+        "event35"
+      ],
+      eVar: [
+        "eVar34",
+        "eVar56"
+      ],
+      prop: [
+        "prop34",
+        "prop56"
+      ],
+      value: [
+        "this is home",
+        "this is another value"
+      ],
+      linkname: "this is linkname"
+    }
+  });
+	```
 
 ## License
 
