@@ -32,7 +32,8 @@
 4. Pass in tagging data manually:
 
 	```  
-    javascript:  
+   javascript:  
+    
 	$("#manual").omnitag({
     delay: 800,
     trackExternalLinks: false,
